@@ -30,11 +30,15 @@
   "homepage": "https://github.com/cdm319/hackkings-app#readme",
   "private": true,
   "babel": {
-    "presets": ["es2015", "stage-0"]
+    "presets": [
+      "es2015",
+      "stage-0"
+    ]
   },
   "dependencies": {
     "body-parser": "^1.15.2",
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "request": "^2.78.0"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
