@@ -19,8 +19,7 @@ app.get('/hello/:name', (req, res, next) => {
 });
 
 app.get('/customers', (req, res, next) => {
-    const endpoint = `http://api.reimaginebanking.com/customers?key=${config.nessieApiKey}`;
-    request(endpoint, (err, response, body) => {
+    request(`http://api.reimaginebanking.com/customers?key=${config.nessieApiKey}`, (err, response, body) => {
         if (!err) {
             const bodyJson = JSON.parse(body);
 
