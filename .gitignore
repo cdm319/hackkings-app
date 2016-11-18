@@ -1,0 +1,22 @@
+# OS Specific Files
+.DS_Store
+Thumbs.db
+
+# IDE Specific Files
+*.iml
+.idea/
+.sublime-workspace
+.sublime-project
+.vscode/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Dependencies
+node_modules/
+.npm/
+
+# Build
+dist/
