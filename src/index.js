@@ -10,11 +10,6 @@ app.get('/hello', (req, res, next) => {
     res.status(200).json({message: 'Hello, World!'});
 });
 
-app.get('/hello/:name', (req, res, next) => {
-    const name = req.params.name;
-    res.status(200).json({message: `Hello, ${name}!`});
-});
-
 // Error Handlers
 app.use((req, res, next) => {
     const err = new Error();
