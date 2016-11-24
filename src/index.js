@@ -2,11 +2,14 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import http from 'http';
 import request from 'request';
+import path from 'path';
 
 import config from './config';
 
 const app = express();
 app.use(bodyParser.json());
+
+app.use('/', express.static(path.join(__dirname, 'client')));
 
 // Routes
 app.get('/hello', (req, res, next) => {
