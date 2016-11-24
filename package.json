@@ -3,12 +3,10 @@
   "version": "1.0.0",
   "description": "Simple Node & React application for HackKings workshop.",
   "scripts": {
-    "dev": "nodemon -w src -w client --exec \"npm run build-react && babel-node src/index.js\"",
     "prestart": "npm run -s build-node && npm run -s build-react",
     "start": "node dist/index.js",
     "build-node": "babel src -s -D -d dist",
-    "build-react": "babel-node node_modules/webpack/bin/webpack --config webpack.config.js",
-    "test": "mocha --require babel-core/register 'test/**/*.spec.js'"
+    "build-react": "babel-node node_modules/webpack/bin/webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
