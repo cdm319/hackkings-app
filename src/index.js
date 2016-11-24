@@ -27,7 +27,6 @@ app.get('/atms', (req, res, next) => {
            const bodyJson = JSON.parse(body).data;
 
            bodyJson.map((obj) => {
-               delete obj._id;
                delete obj.accessibility;
                delete obj.hours;
                delete obj.address;
