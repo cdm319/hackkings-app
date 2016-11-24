@@ -18,21 +18,25 @@ app.get('/hello/:name', (req, res, next) => {
     res.status(200).json({message: `Hello, ${name}!`});
 });
 
-app.get('/customers', (req, res, next) => {
-    request(`http://api.reimaginebanking.com/customers?key=${config.nessieApiKey}`, (err, response, body) => {
-        if (!err) {
-            const bodyJson = JSON.parse(body);
+app.get('/atms', (req, res, next) => {
+    request(`http://api.reimaginebanking.com/atms?key=${config.nessieApiKey}`, (err, response, body) => {
+       if (!err) {
+           const bodyJson = JSON.parse(body).data;
 
-            const users = bodyJson.map((obj) => {
-                return {
-                    name: `${obj.first_name} ${obj.last_name}`
-                };
-            });
+           bodyJson.map((obj) => {
+               delete obj._id;
+               delete obj.accessibility;
+               delete obj.hours;
+               delete obj.address;
+               delete obj.language_list;
 
-            res.status(200).send(users);
-        } else {
-            next(err);
-        }
+               return obj;
+           });
+
+           res.status(200).send(bodyJson);
+       } else {
+           next(err);
+       }
     });
 });
 
