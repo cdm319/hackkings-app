@@ -1,5 +1,5 @@
 import React from 'react';
-import AtmList from '../AtmList';
+import AtmMap from '../AtmMap';
 import styles from './index.css';
 
 class IndexComponent extends React.Component {
@@ -7,7 +7,7 @@ class IndexComponent extends React.Component {
         return (
             <section className={styles.root}>
                 <h1>HackKings App</h1>
-                <AtmList />
+                <AtmMap />
             </section>
         );
     }

@@ -1,0 +1,9 @@
+.marker {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+    background-color: rgba(231, 76, 60, .75);
+    color: #fff;
+    text-align: center;
+    line-height: 2rem;
+}
